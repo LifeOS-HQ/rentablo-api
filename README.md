@@ -5,7 +5,7 @@ A PHP Wrapper for the rentablo.de API
 ## Installation
 
 ```
-composer require 
+composer require lifeos/rentablo-api
 ```
 
 ## Usage

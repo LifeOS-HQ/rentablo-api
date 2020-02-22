@@ -1,4 +1,14 @@
 {
+    "name": "lifeos/rentablo-api",
+    "description": "PHP Rentablo API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Sundermeier",
+            "email": "daniel@hof-sundermeier.de",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Dasumi\\Rentablo\\": "src/"

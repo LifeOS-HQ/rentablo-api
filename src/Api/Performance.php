@@ -12,4 +12,32 @@ class Performance extends AbstractApi
             'debug' => $this->debug,
         ]);
     }
+
+    public function depot(array $accountIds, string $startDate) : array
+    {
+        return $this->client->postJson('performance/depots', [
+            'startDate' => $startDate,
+            'accountIds' => $accountIds,
+            'cachedQuotesOnly' => true,
+            'cashFlowAndPerformanceStatisticsParamsList' => [
+                [
+                    'assetClasses' => [],
+                    'includeCash' => false,
+                    'includeDividends' => true,
+                ],
+            ],
+        ], [
+            'debug' => $this->debug,
+        ]);
+    }
+
+    public function portfolio(int $accountId, string $startDate) : array
+    {
+        return $this->client->get('performance/portfolio', [
+            'accountId' => $accountId,
+            'startDate' => $startDate,
+        ], [
+            'debug' => $this->debug,
+        ]);
+    }
 }

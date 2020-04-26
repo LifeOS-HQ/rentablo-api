@@ -52,6 +52,15 @@ class AccountsTest extends \Dasumi\Rentablo\Tests\TestCase
     /**
      * @test
      */
+    public function it_can_get_the_valuation_including_cash_of_an_account()
+    {
+        $data = $this->api->accounts->valuation($this->accountIds['depot'], true);
+        $this->assertIsFloat($data);
+    }
+
+    /**
+     * @test
+     */
     public function it_can_get_the_cash_flows()
     {
         $data = $this->api->accounts->cashFlows($this->accountIds['cash'], 'year');

@@ -24,7 +24,7 @@ class PerformanceTest extends \Dasumi\Rentablo\Tests\TestCase
     {
         $data = $this->api->performance->depot([$this->accountIds['depot']], (new \DateTime('yesterday'))->format('Y-m-d'));
         var_dump($data);
-        $this->assertArrayHasKeys('cashFlowAndPerformanceStatisticsList', $data);
+        $this->assertArrayHasKey('cashFlowAndPerformanceStatisticsList', $data);
     }
 
     /**

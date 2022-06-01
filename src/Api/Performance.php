@@ -6,7 +6,7 @@ use Dasumi\Rentablo\Api\AbstractApi;
 
 class Performance extends AbstractApi
 {
-    public function absoluteReturn(int $id) : array
+    public function absoluteReturn(int $id) : float
     {
         return $this->client->get('performance/absoluteReturn' . ($id ? '/' . $id : ''), [], [
             'debug' => $this->debug,

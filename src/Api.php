@@ -2,15 +2,16 @@
 
 namespace Dasumi\Rentablo;
 
-use Dasumi\BaseApiWrapper\Client as BaseClient;
-use Dasumi\Rentablo\Api\Accounts;
-use Dasumi\Rentablo\Api\Authorizations;
-use Dasumi\Rentablo\Api\Dividends;
-use Dasumi\Rentablo\Api\Funds;
-use Dasumi\Rentablo\Api\Investments;
-use Dasumi\Rentablo\Api\Login;
-use Dasumi\Rentablo\Api\Performance;
 use Dasumi\Rentablo\Client;
+use Dasumi\Rentablo\Api\Funds;
+use Dasumi\Rentablo\Api\Login;
+use Dasumi\Rentablo\Api\Accounts;
+use Dasumi\Rentablo\Api\Bookings;
+use Dasumi\Rentablo\Api\Dividends;
+use Dasumi\Rentablo\Api\Investments;
+use Dasumi\Rentablo\Api\Performance;
+use Dasumi\Rentablo\Api\Authorizations;
+use Dasumi\BaseApiWrapper\Client as BaseClient;
 
 class Api extends \Dasumi\BaseApiWrapper\Api
 {
@@ -66,6 +67,7 @@ class Api extends \Dasumi\BaseApiWrapper\Api
     {
         $this->accounts = new Accounts($client);
         $this->authorizations = new Authorizations($client);
+        $this->bookings = new Bookings($client);
         $this->dividends = new Dividends($client);
         $this->funds = new Funds($client);
         $this->investments = new Investments($client);

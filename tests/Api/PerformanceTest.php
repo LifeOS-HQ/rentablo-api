@@ -11,7 +11,7 @@ class PerformanceTest extends \Dasumi\Rentablo\Tests\TestCase
      */
     public function it_can_get_the_absolute_return_of_an_investment()
     {
-        $investmentId = '';
+        $investmentId = 1544;
         $data = $this->api->performance->absoluteReturn($investmentId);
         var_dump($data);
         exit;
@@ -32,7 +32,6 @@ class PerformanceTest extends \Dasumi\Rentablo\Tests\TestCase
      */
     public function it_can_get_the_performance_of_a_portfolio()
     {
-        $investmentId = '';
         $data = $this->api->performance->portfolio($this->accountIds['depot'], '2020-02-20');
         var_dump($data);
         exit;

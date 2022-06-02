@@ -9,9 +9,22 @@ class AccountsTest extends \Dasumi\Rentablo\Tests\TestCase
     /**
      * @test
      */
-    public function it_can_get_accounts()
+    public function it_can_get_all_accounts()
     {
         $data = $this->api->accounts->get();
+
+        var_dump($data);
+        $this->assertArrayHasKey('accounts', $data);
+    }
+
+    /**
+     * @test
+     */
+    public function it_can_get_all_accounts_of_type_depot()
+    {
+        $data = $this->api->accounts->get(0, [
+            'type' => '01_depot',
+        ]);
 
         var_dump($data);
         $this->assertArrayHasKey('accounts', $data);

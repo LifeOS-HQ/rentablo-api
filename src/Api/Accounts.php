@@ -16,9 +16,9 @@ class Accounts extends AbstractApi
         ]);
     }
 
-    public function get(int $id = 0) : array
+    public function get(int $id = 0, array $filter = []) : array
     {
-        return $this->client->get('accounts' . ($id ? '/' . $id : ''), [], [
+        return $this->client->get('accounts' . ($id ? '/' . $id : ''), $filter, [
             'debug' => $this->debug,
         ]);
     }
